@@ -10,3 +10,52 @@ body {
     height: inherit;
     display: grid;
 }
+
+header {
+    display: flex;
+    background-color: #0891b2;
+    padding: 45px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+header > section {
+    display: grid;
+    height: fit-content;
+    grid-template-rows: auto auto 1fr;
+    background-color: white;
+    padding: 30px 25px;
+}
+
+header > section > p {
+    line-height: 25px;
+    max-width: 700px;
+    margin-top: 10px;
+}
+
+.about-me-icons > a {
+    width: 30px;
+}
+
+.about-me-icons {
+    display: flex;
+    justify-self: end;
+    height: fit-content;
+    gap: 18px;
+    padding-top: 25px;
+    padding-right: 15px;
+}
+
+.header-image {
+    position: relative;
+    max-width: 325px;
+}
+
+.header-image > span {
+    width: fit-content;
+    position: absolute;
+    font-size: 2.6rem;
+    color: white;
+    left: 15px;
+    bottom: 5px;
+}

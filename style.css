@@ -73,17 +73,23 @@ header > section > p {
     padding-right: 15px;
 }
 
-.header-image {
-    position: relative;
+.image-wrapper {
     max-width: 375px;
+    position: relative;
     z-index: 2;
+}
+
+.header-image {
+    width: clamp(300px, 100%, 375px);
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.233);
 }
 
 div.header-image > img {
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.233);
 }
 
-.header-image > span {
+.image-wrapper > span {
+    z-index: inherit;
     width: fit-content;
     position: absolute;
     font-size: 2.9rem;
@@ -102,7 +108,7 @@ div.header-image > img {
 .project {
     display: grid;
     align-content: center;
-    box-shadow: 1px 4px 6px 2px rgba(0, 0, 0, 0.205);
+    box-shadow: 1px 4px 7px 3px rgba(0, 0, 0, 0.205);
 }
 
 .project > img {
@@ -187,10 +193,11 @@ h2 {
 
 
 .footer-image {
-    max-width: 450px;
+    width: clamp(300px, 100%, 450px);
     grid-row: 1 / 3;
     grid-column: 2/3;
     justify-self: center;
+    align-self: center;
 }
 
 main {
@@ -201,4 +208,104 @@ main {
 
 main > div {
     width: clamp(350px, 100%, 1410px);
+}
+
+div.header-image, .image-wrapper > h2, .image-wrapper > p {
+    display: none;
+}
+
+@media (min-width: 1040px) and (max-width: 1200px) {
+    .projects {
+        grid-template-columns: repeat(3, 299px);
+    }
+
+    .project > img {
+        width: 300px;
+    }
+}
+
+@media (max-width: 1040px) {
+    .projects {
+        grid-template-columns: repeat(2, 299px);
+        justify-content: space-evenly;
+    }
+
+    .project > img {
+        width: 300px;
+    }
+
+    .contact {
+        font-size: 1.3rem;
+    }
+
+    footer > div {
+        column-gap: 30px;
+    }
+
+    main > div > h2, .image-wrapper > h2 {
+        text-align: center;
+    }
+
+    .about-me-icons {
+        display: none;
+    }
+
+    header {
+        display: block;
+        padding: 0;
+    }
+
+    .image-wrapper {
+        max-width: 500px;
+        padding: 40px 24px 35px;
+        background-color: white;
+        margin: 160px auto 0px auto;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.233);
+    }
+
+    .image-wrapper + section {
+        display: none;
+    }
+
+    img.header-image {
+        display: none;
+    }
+
+    div.header-image, .image-wrapper > h2, .image-wrapper > p {
+        display: block;
+    }
+
+    .image-wrapper > span {
+        left: 207px;
+        top: -65px;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.233);
+    }
+
+    .image-wrapper > p {
+        font-size: 1.3rem;
+    }
+
+    div.header-image {
+        height: 450px;
+        background-image: url(./images-and-icons/pexels-jacky-hong-small.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        float: left;
+        top: -135px;
+        left: -75px;
+        margin-bottom: -130px;
+        margin-right: -60px;
+        width: clamp(200px, 100%, 300px);
+    }
+
+    .header-text {
+        z-index: 1;
+        display: grid;
+        height: fit-content;
+        grid-template-rows: auto auto 1fr;
+        background-color: white;
+        padding: 30px 25px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.233);
+    }
 }

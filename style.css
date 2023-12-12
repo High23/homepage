@@ -80,7 +80,7 @@ header > section > p {
 }
 
 .header-image {
-    width: clamp(300px, 100%, 375px);
+    width: clamp(230px, 100%, 375px);
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.233);
 }
 
@@ -108,7 +108,7 @@ div.header-image > img {
 .project {
     display: grid;
     align-content: center;
-    box-shadow: 1px 4px 7px 3px rgba(0, 0, 0, 0.205);
+    box-shadow: 2px 5px 6px 2px rgb(31 30 30 / 15%);
 }
 
 .project > img {
@@ -155,7 +155,7 @@ footer > div {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto 1fr;
-    width: clamp(350px, 100%, 1410px);
+    width: clamp(250px, 100%, 1410px);
 }
 
 .footer-icons {
@@ -176,7 +176,7 @@ footer > div {
     grid-column: 1 / 2;
 }
 
-.contact > div:nth-child(1) {
+.contact > p:nth-child(1) {
     max-width: 355px;
 }
 
@@ -193,7 +193,7 @@ h2 {
 
 
 .footer-image {
-    width: clamp(300px, 100%, 450px);
+    width: clamp(200px, 100%, 450px);
     grid-row: 1 / 3;
     grid-column: 2/3;
     justify-self: center;
@@ -214,6 +214,10 @@ div.header-image, .image-wrapper > h2, .image-wrapper > p {
     display: none;
 }
 
+.contact > p, .contact > div > p, .phone-and-email > p {
+    margin: 0px;
+}
+
 @media (min-width: 1040px) and (max-width: 1200px) {
     .projects {
         grid-template-columns: repeat(3, 299px);
@@ -226,12 +230,12 @@ div.header-image, .image-wrapper > h2, .image-wrapper > p {
 
 @media (max-width: 1040px) {
     .projects {
-        grid-template-columns: repeat(2, 299px);
+        grid-template-columns: minmax(249px, 299px) minmax(249px, 299px);
         justify-content: space-evenly;
     }
 
     .project > img {
-        width: 300px;
+        width: clamp(250px, 100%, 300px);
     }
 
     .contact {
@@ -256,10 +260,11 @@ div.header-image, .image-wrapper > h2, .image-wrapper > p {
     }
 
     .image-wrapper {
-        max-width: 500px;
+        width: clamp(350px, 100%, 500px);
+        max-width: unset;
         padding: 40px 24px 35px;
         background-color: white;
-        margin: 160px auto 0px auto;
+        margin: 160px auto 0px;
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.233);
     }
 
@@ -307,5 +312,173 @@ div.header-image, .image-wrapper > h2, .image-wrapper > p {
         background-color: white;
         padding: 30px 25px;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.233);
+    }
+}
+
+@media (min-width: 600px) and (max-width: 760px) {
+    footer {
+        padding: 45px 30px;
+    }
+
+    main {
+        padding: 45px 0px;
+    }
+    
+    .contact > div {
+        font-size: 1.2rem;
+    }
+
+    .phone-and-email {
+        gap: 12px;
+    }
+
+    img[src="./images-and-icons/phone-outline.svg"], img[src="./images-and-icons/email-outline.svg"] {
+        width: 26px;
+    }
+}
+
+@media (max-width: 600px) {
+    .image-wrapper + section {
+        display: grid;
+        position: relative;
+        padding: 0px;
+        box-shadow: none;
+    }
+    
+    main, footer {
+        padding: 0px;
+    }
+
+    img.header-image {
+        display: block;
+        box-shadow: 5px 5px 6px 0px rgb(45 43 43 / 23%);
+    }
+
+    div.header-image, .image-wrapper > h2, .image-wrapper > p {
+        display: none;
+    }
+
+    .image-wrapper {
+        width: unset;
+        max-width: 347px;
+        padding: 0px;
+        background-color: unset;
+        margin: 0px;
+        box-shadow: none;
+        margin-top: 20px;
+    }
+
+    .projects {
+        grid-template-columns: repeat(1, 247px);
+        padding-bottom: 100px;
+    }
+
+    .footer-image {
+        grid-column: auto;
+        grid-row: 3;
+    }
+
+    .image-wrapper > span {
+        top: unset;
+        left: 20px;
+        bottom: 0px;
+        font-size: 4rem;
+    }
+
+    .project > img {
+        width: 248px;
+    }
+
+    .project-info > h4 {
+        font-size: 1.1rem;
+    }
+
+    .project-info > span {
+        gap: 10px;
+        padding-right: 18px;
+    }
+
+    .project-icons {
+        width: 22px;
+    }
+
+    .project-info > p {
+        font-size: .9rem;
+    }
+
+    header > section > p {
+        font-size: 1.2rem;
+        margin-top: 5px;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .about-me-icons {
+        display: flex;
+        justify-self: center;
+        gap: 20px;
+        padding-top: 0px;
+        padding-bottom: 50px;
+    }
+
+    footer > div {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto 1fr;
+    }
+
+    .contact {
+        font-size: 1rem;
+        grid-template-columns: minmax(255px, 275px);
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .footer-icons {
+        gap: 20px;
+        justify-self: center;
+    }
+
+    .footer-icons > a {
+        width: 28px;
+    }
+
+    .phone-and-email {
+        column-gap: 10px;
+        row-gap: 15px;
+    }
+
+    .about-me-icons > a {
+        width: 24px;
+    }
+
+    .container {
+        display: block;
+    }
+    
+    header {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 20px;
+    }
+
+    .slanted {
+        clip-path: polygon(0 0, 100% 0, 100% 20%, 0 45%);
+    }
+
+    .phone-and-email {
+        grid-template-columns: auto;
+        font-size: 0.9rem;
+    }
+
+    img[src="./images-and-icons/phone-outline.svg"], img[src="./images-and-icons/email-outline.svg"] {
+        display: none;
+    }
+
+    .contact > p:first-child {
+        font-size: 1.2rem;
     }
 }
